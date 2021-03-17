@@ -1,7 +1,7 @@
 ---
 title: "lab-07-simpsons.Rmd"
-author: "Musab Isah"
-date: "3 March 2021"
+author: "Musab Isah "
+date: "17 March 2021"
 output: pdf_document
 ---
 
