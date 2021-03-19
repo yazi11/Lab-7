@@ -22,50 +22,64 @@ library(mosaicData)
 
 1.  
 ```{r whickam}
-
+view(Whickham)
 ```
     
 Your answer:
+The date is observational as the description states that is based on age, smoking , and mortality , which are all observable events and not produced via experiments.
 
 2.  
 ```{r observations}
-
+nrow(Whickham)
 ```
 
 Your answer;
+There are 1.314 observations. As we know every row is an observation.
 
 3.  
 
 ```{r number_variables}
-
+ names(Whickham)
 ```
 
 Your answer:  
+There are 3 variables, "outcome" , "smoker" , and "age"
+
 
 ```{r var_type}
-
+unique(Whickham$outcome)
+unique(Whickham$smoker)
+unique(Whickham$age)
 ```
 
 Your answer: 
+Using the `unique()` function on the 3 variables we could see that "outcome" only takes Alive or Dead value, which makes it categorical non-ordinal. "smoker" only takes Yes or No, which also makes it categorical non-ordinal. Age numberical continous date.
+
+One of the best ways to visualise categorical date is through the use of bar charts.
 
 ```{r plot_outcome}
-
+ggplot(Whickham, aes(x = outcome)) +
+  geom_bar()
 ```
 
 
 ```{r plot_smoker}
-
+ggplot(Whickham, aes(x = smoker)) +
+  geom_bar()
 ```
 
 ```{r plot_age}
-
+ggplot(Whickham, aes(x = age)) +
+  geom_boxplot()
 ```
 
 
 4. 
+I expect the health will be worser and may the person will be died after while , if he keeping smoke
 
 ```{r plot_smokeVSincome_1}
-
+ggplot(Whickham, aes(x=smoker, y=outcome , color=outcome)) +
+  geom_bar(stat = "identity")
 ```
 
 Knit, commit, and push to github.
